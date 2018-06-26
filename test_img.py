@@ -21,7 +21,7 @@ normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
 tensor = transforms.ToTensor()
 
-model = torch.load(args.model, map_location=lambda storage, loc: storage)
+model = torch.load(argv[2], map_location=lambda storage, loc: storage)
 model = model.module
 model = model.cuda()
 
