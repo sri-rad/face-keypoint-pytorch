@@ -14,8 +14,8 @@ parser.add_argument('model')
 args = parser.parse_args()
 args.size = 512
 
-xres = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-yres = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+# xres = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+# yres = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
@@ -27,6 +27,8 @@ model = model.cuda()
 
 
 frame = cv2.imread(sys.argv[1])
+
+yres, xres, channels = frame.shape
 
 #if xres > yres:
 #    frame = frame[:,int((xres - yres)/2):int((xres+yres)/2),:]
