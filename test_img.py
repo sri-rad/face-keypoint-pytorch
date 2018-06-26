@@ -26,9 +26,7 @@ model = model.module
 model = model.cuda()
 
 
-ret = cv2.imread(sys.argv[1])
-
-if not ret: break
+frame = cv2.imread(sys.argv[1])
 
 #if xres > yres:
 #    frame = frame[:,int((xres - yres)/2):int((xres+yres)/2),:]
